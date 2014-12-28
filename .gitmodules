@@ -1,0 +1,3 @@
+[submodule "box"]
+	path = box
+	url = git@github.com:SamStonehouse/vagrant-puppet-webdev.git
