@@ -35,7 +35,8 @@ module.exports = function(grunt) {
 					plugins: [
 						new autoprefixer({browsers: ["last 2 versions"]})
 					],
-					sourceMap: true
+					sourceMap: true,
+					sourceMapURL: "style.css.map",
 				},
 				files: {
 					"public/assets/styles/style.css": "styles/less/style.less"
@@ -46,7 +47,7 @@ module.exports = function(grunt) {
 					plugins: [
 						autoprefixer({browsers: ["last 2 versions"]})
 					],
-					sourceMap: false
+					sourceMap: false,
 				},
 				files: {
 					"public/assets/styles/style.css": "styles/less/style.less"
