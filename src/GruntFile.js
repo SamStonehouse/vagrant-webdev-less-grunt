@@ -52,17 +52,28 @@ module.exports = function(grunt) {
 					"public/assets/styles/style.css": "styles/less/style.less"
 				}
 			}
+		},
+		watch: {
+			styles: {
+				files: ['styles/less/*'],
+				tasks: ['dev'],
+				options: {
+
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-concat-sourcemap');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', ['concat:libs', 'concat_sourcemap:main', 'less:development']);
 	grunt.registerTask('dev', ['concat:libs', 'concat_sourcemap:main', 'less:development']);
 	grunt.registerTask('prod', ['concat:libs', 'concat:main', 'less:production']);
 	grunt.registerTask('scripts', ['concat:libs', 'concat_sourcemap:main']);
 	grunt.registerTask('styles', ['less:development']);
+	grunt.registerTask('watch-styles', ['watch:styles']);
 
 };
